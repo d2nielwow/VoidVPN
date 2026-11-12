@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- Базовая тема: чёрное окно, чтобы не было белой вспышки при запуске -->
+    <style name="Theme.VoidVPN" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/void_black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <!-- Тема запуска (Android SplashScreen API) -->
+    <style name="Theme.VoidVPN.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/void_black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.VoidVPN</item>
+    </style>
+</resources>

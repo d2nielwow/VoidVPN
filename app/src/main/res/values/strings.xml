@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Void VPN</string>
+
+    <string name="onboarding_skip">Пропустить</string>
+    <string name="onboarding_next">Далее</string>
+    <string name="onboarding_start">Начать</string>
+    <string name="onboarding_1_title">Интернет без границ</string>
+    <string name="onboarding_1_text">Открывайте заблокированные сайты и приложения одним нажатием.</string>
+    <string name="onboarding_2_title">Не храним логи</string>
+    <string name="onboarding_2_text">Мы не записываем, какие сайты вы открываете. Аккаунт создаётся без email и телефона.</string>
+    <string name="onboarding_3_title">Работает там, где другие блокируются</string>
+    <string name="onboarding_3_text">Протоколы VLESS-Reality и Hysteria2 проходят фильтры, которые останавливают обычный VPN.</string>
+
+    <string name="permission_step">ПОСЛЕДНИЙ ШАГ</string>
+    <string name="permission_title">Android спросит разрешение на VPN</string>
+    <string name="permission_text">Это стандартный системный запрос. Нажмите «ОК», чтобы Void мог шифровать трафик.</string>
+    <string name="permission_card_title">Запрос на подключение</string>
+    <string name="permission_card_text">Приложение Void VPN запрашивает разрешение на создание VPN-подключения…</string>
+    <string name="permission_card_cancel">Отмена</string>
+    <string name="permission_card_ok">ОК</string>
+    <string name="permission_point_1">Шифрует трафик между телефоном и сервером</string>
+    <string name="permission_point_2">Мы не храним историю сайтов и приложений</string>
+    <string name="permission_continue">Продолжить</string>
+    <string name="permission_denied_title">Нет разрешения на VPN</string>
+    <string name="permission_denied_text">Без него Android не даст Void шифровать трафик. Нажмите «ОК» в системном окне.</string>
+    <string name="permission_denied_retry">Запросить снова</string>
+    <string name="permission_denied_why">Зачем это нужно</string>
+</resources>

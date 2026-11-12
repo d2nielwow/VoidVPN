@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Иконка системного сплеша. Холст 240dp (Android SplashScreen API), видимая область — круг 160dp.
+    Знак 96dp (как в макете) сдвинут на 27.5dp вверх от центра: в макете знак и подпись «void»
+    стоят группой по центру, поэтому при переходе на экран приложения знак не прыгает.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="240dp"
+    android:height="240dp"
+    android:viewportWidth="240"
+    android:viewportHeight="240">
+    <group
+        android:translateX="72"
+        android:translateY="44.5">
+        <path
+            android:fillColor="#F4F4F5"
+            android:pathData="M46.318,0.029 A48,48 0 1,0 89.535,72.059 A42,42 0 0,1 46.318,0.029 Z" />
+    </group>
+</vector>
