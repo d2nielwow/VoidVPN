@@ -15,18 +15,18 @@ import dmirzayants.voidvpn.ui.theme.VoidVPNTheme
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private val startViewModel: StartViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splash = installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        splash.setKeepOnScreenCondition { startViewModel.startDestination.value == null }
+        splash.setKeepOnScreenCondition { mainViewModel.startDestination.value == null }
 
         setContent {
             VoidVPNTheme {
-                val destination by startViewModel.startDestination.collectAsStateWithLifecycle()
+                val destination by mainViewModel.startDestination.collectAsStateWithLifecycle()
                 destination?.let { VoidNavHost(startDestination = it) }
             }
         }

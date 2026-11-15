@@ -11,6 +11,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dmirzayants.voidvpn.feature.account.presentation.keycreated.KeyCreatedScreen
+import dmirzayants.voidvpn.feature.account.presentation.start.StartScreen
 import dmirzayants.voidvpn.feature.onboarding.presentation.OnboardingScreen
 import dmirzayants.voidvpn.feature.permission.presentation.PermissionScreen
 import dmirzayants.voidvpn.ui.theme.VoidBlack
@@ -40,11 +42,29 @@ fun VoidNavHost(
         composable<PermissionRoute> {
             PermissionScreen(
                 onNavigateToHome = {
-                    navController.navigate(HomeRoute) {
+                    navController.navigate(StartRoute) {
                         popUpTo(PermissionRoute) { inclusive = true }
                     }
                 }
             )
+        }
+        composable<StartRoute> {
+            StartScreen(
+                onNavigateToKeyCreated = { navController.navigate(KeyCreatedRoute) },
+                onNavigateToLogin = { navController.navigate(LoginRoute) }
+            )
+        }
+        composable<KeyCreatedRoute> {
+            KeyCreatedScreen(
+                onNavigateToHome = {
+                    navController.navigate(HomeRoute) {
+                        popUpTo(StartRoute) { inclusive = true }
+                    }
+                }
+            )
+        }
+        composable<LoginRoute> {
+            PlaceHolderScreen("Login")
         }
         composable<HomeRoute> {
             PlaceHolderScreen("Home")

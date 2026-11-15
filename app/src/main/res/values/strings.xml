@@ -25,4 +25,17 @@
     <string name="permission_denied_text">Без него Android не даст Void шифровать трафик. Нажмите «ОК» в системном окне.</string>
     <string name="permission_denied_retry">Запросить снова</string>
     <string name="permission_denied_why">Зачем это нужно</string>
+
+    <string name="start_title_1">Свободный интернет.</string>
+    <string name="start_title_2">Без email и телефона.</string>
+    <string name="start_create">Создать аккаунт</string>
+    <string name="start_have_key">У меня есть ключ или ссылка</string>
+    <string name="key_title">Ваш ключ доступа</string>
+    <string name="key_text">Это ваш логин и пароль одновременно. С ним можно войти на любом устройстве.</string>
+    <string name="key_copy">Копировать</string>
+    <string name="key_save_qr">Сохранить QR</string>
+    <string name="key_warning">Сохраните ключ в надёжном месте. Восстановить его без email невозможно.</string>
+    <string name="key_saved">Я сохранил ключ</string>
+    <string name="key_copied">Ключ скопирован</string>
+    <string name="start_terms">Продолжая, вы принимаете Условия и Политику конфиденциальности</string>
 </resources>

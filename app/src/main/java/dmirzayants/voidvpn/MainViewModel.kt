@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class StartViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     observeOnboardingCompleted: ObserveOnboardingCompletedUseCase
 ) : ViewModel() {
 

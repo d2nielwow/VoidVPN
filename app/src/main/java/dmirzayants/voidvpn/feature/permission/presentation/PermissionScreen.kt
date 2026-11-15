@@ -18,12 +18,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Preview
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -40,10 +36,10 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dmirzayants.voidvpn.R
 import dmirzayants.voidvpn.core.mvi.CollectEffects
 import dmirzayants.voidvpn.core.ui.VoidErrorSheet
+import dmirzayants.voidvpn.core.ui.VoidMoon
 import dmirzayants.voidvpn.ui.theme.VoidAction
 import dmirzayants.voidvpn.ui.theme.VoidBlack
 import dmirzayants.voidvpn.ui.theme.VoidMono
-import dmirzayants.voidvpn.ui.theme.VoidOutline
 import dmirzayants.voidvpn.ui.theme.VoidStatus
 import dmirzayants.voidvpn.ui.theme.VoidSurface
 import dmirzayants.voidvpn.ui.theme.VoidText
@@ -117,7 +113,10 @@ fun PermissionContent(
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.spacedBy(10.dp)
             ) {
-                VpnKeyMoon()
+                VoidMoon(
+                    size = 26.dp,
+                    cutColor = VoidSurface.raised
+                )
                 Text(
                     stringResource(R.string.permission_card_title),
                     style = MaterialTheme.typography.labelLarge,
@@ -191,25 +190,6 @@ fun PermissionContent(
                 onDismiss = {onIntent(PermissionIntent.DismissDenied)}
             )
         }
-    }
-}
-
-
-@Composable
-private fun VpnKeyMoon() {
-    Box(
-        modifier = Modifier
-            .size(26.dp)
-            .clip(CircleShape)
-            .background(VoidText.primary)
-    ) {
-        Box(
-            modifier = Modifier
-                .size(22.dp)
-                .align(Alignment.TopEnd)
-                .offset(x = 4.dp, y = (-2).dp)
-                .background(VoidSurface.raised, CircleShape)
-        )
     }
 }
 
