@@ -9,6 +9,7 @@ import dmirzayants.voidvpn.feature.vpn.domain.VpnProtocol
 data class SettingsState(
     val settings: AppSettings = AppSettings(),
     val protocol: VpnProtocol = VpnProtocol.AUTO,
+    val splitCount: Int = 0,
 ) : UiState
 
 sealed interface SettingsIntent : UiIntent {

@@ -89,7 +89,7 @@ fun SettingsContent(
                 )
                 SettingRow(
                     stringResource(R.string.settings_split),
-                    value = stringResource(R.string.settings_split_value),
+                    value = stringResource(R.string.settings_split_value, state.splitCount),
                     onClick = { onIntent(SettingsIntent.SplitTunnelingClicked) }
                 )
                 SettingRow(

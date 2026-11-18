@@ -24,7 +24,10 @@ import dmirzayants.voidvpn.feature.billing.presentation.PlansScreen
 import dmirzayants.voidvpn.feature.home.presentation.HomeScreen
 import dmirzayants.voidvpn.feature.onboarding.presentation.OnboardingScreen
 import dmirzayants.voidvpn.feature.servers.presentation.ServersScreen
+import dmirzayants.voidvpn.feature.account.presentation.importsub.ImportScreen
+import dmirzayants.voidvpn.feature.settings.presentation.LogsScreen
 import dmirzayants.voidvpn.feature.settings.presentation.ProtocolScreen
+import dmirzayants.voidvpn.feature.settings.presentation.SplitTunnelingScreen
 import dmirzayants.voidvpn.feature.settings.presentation.SettingsScreen
 import dmirzayants.voidvpn.feature.permission.presentation.PermissionScreen
 import dmirzayants.voidvpn.ui.theme.VoidBlack
@@ -82,7 +85,7 @@ fun VoidNavHost(
                         popUpTo(StartRoute) { inclusive = true }
                     }
                 },
-                onNavigateToImport = { },
+                onNavigateToImport = { navController.navigate(ImportRoute) },
                 onNavigateBack = { navController.popBackStack() }
             )
         }
@@ -144,10 +147,20 @@ fun VoidNavHost(
             ProtocolScreen(onNavigateBack = { navController.popBackStack() })
         }
         composable<SplitTunnelingRoute> {
-            PlaceHolderScreen("SplitTunneling")
+            SplitTunnelingScreen(onNavigateBack = { navController.popBackStack() })
         }
         composable<LogsRoute> {
-            PlaceHolderScreen("Logs")
+            LogsScreen(onNavigateBack = { navController.popBackStack() })
+        }
+        composable<ImportRoute> {
+            ImportScreen(
+                onNavigateBack = { navController.popBackStack() },
+                onNavigateToHome = {
+                    navController.navigate(HomeRoute) {
+                        popUpTo(StartRoute) { inclusive = true }
+                    }
+                }
+            )
         }
     }
 }

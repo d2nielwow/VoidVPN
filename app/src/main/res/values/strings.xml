@@ -96,7 +96,7 @@
     <string name="settings_group_help">Помощь</string>
     <string name="settings_protocol">Протокол</string>
     <string name="settings_split">Раздельное туннелирование</string>
-    <string name="settings_split_value">3 прил.</string>
+    <string name="settings_split_value">%1$d прил.</string>
     <string name="settings_killswitch">Kill switch</string>
     <string name="settings_killswitch_sub">Блокировать интернет при обрыве VPN</string>
     <string name="settings_autoconnect">Автоподключение</string>
@@ -151,4 +151,22 @@
     <string name="status_reopen">Открыть оплату снова</string>
     <string name="status_support">Написать в поддержку</string>
     <string name="status_done">Оплата прошла</string>
+
+    <string name="import_title">Импорт подписки</string>
+    <string name="import_found">Найдено в буфере обмена</string>
+    <string name="import_action">Импортировать</string>
+    <string name="import_subscription_label">Ссылка-подписка</string>
+    <string name="import_scan_title">Сканировать QR-код</string>
+    <string name="import_scan_text">Камерой или из галереи</string>
+    <string name="import_paste_title">Вставить ссылку</string>
+    <string name="import_paste_hint">https://…/sub или vless://…</string>
+    <string name="import_formats">vless:// hy2:// trojan:// ss:// https://…/sub</string>
+    <string name="import_invalid">Не удалось распознать ссылку</string>
+
+    <string name="split_title">Раздельное туннелирование</string>
+    <string name="split_text">Выбранные приложения будут работать напрямую, мимо VPN.</string>
+    <string name="split_direct">напрямую</string>
+    <string name="split_vpn">через VPN</string>
+
+    <string name="logs_title">Журнал подключения</string>
 </resources>

@@ -27,7 +27,7 @@ class MainViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val completed = observeOnboardingCompleted().first()
-            val hasAccount = accountRepository.accessKey.first() != null
+            val hasAccount = accountRepository.hasAccount.first()
             _startDestination.value = when {
                 !completed -> OnboardingRoute
                 !hasAccount -> StartRoute

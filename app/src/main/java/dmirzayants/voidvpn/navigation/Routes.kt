@@ -17,3 +17,4 @@ import kotlinx.serialization.Serializable
 @Serializable object PlansRoute
 @Serializable data class PaymentMethodsRoute(val planId: String)
 @Serializable data class PaymentStatusRoute(val planId: String, val methodId: String)
+@Serializable object ImportRoute

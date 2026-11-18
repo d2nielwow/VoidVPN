@@ -18,12 +18,20 @@ class AccountRepositoryImpl @Inject constructor(
 
     private companion object {
         val KEY = stringPreferencesKey("access_key")
+        val SUBSCRIPTION = stringPreferencesKey("subscription_link")
         const val KEY_PREFIX = "VOID"
         const val KEY_RANDOM_LENGTH = 12
         const val ALPHABET = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
     }
 
     override val accessKey: Flow<String?> = dataStore.data.map { it[KEY] }
+
+    override val hasAccount: Flow<Boolean> =
+        dataStore.data.map { it[KEY] != null || it[SUBSCRIPTION] != null }
+
+    override suspend fun importSubscription(link: String) {
+        dataStore.edit { it[SUBSCRIPTION] = link }
+    }
 
     override suspend fun createAccount(): String {
         val key = generateKey()
