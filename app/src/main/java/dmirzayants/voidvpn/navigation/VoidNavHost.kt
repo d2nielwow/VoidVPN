@@ -14,7 +14,18 @@ import androidx.navigation.compose.rememberNavController
 import dmirzayants.voidvpn.feature.account.presentation.keycreated.KeyCreatedScreen
 import dmirzayants.voidvpn.feature.account.presentation.login.LoginScreen
 import dmirzayants.voidvpn.feature.account.presentation.start.StartScreen
+import androidx.navigation.NavController
+import androidx.navigation.toRoute
+import dmirzayants.voidvpn.core.ui.MainTab
+import dmirzayants.voidvpn.feature.billing.presentation.MyPlanScreen
+import dmirzayants.voidvpn.feature.billing.presentation.PaymentMethodsScreen
+import dmirzayants.voidvpn.feature.billing.presentation.PaymentStatusScreen
+import dmirzayants.voidvpn.feature.billing.presentation.PlansScreen
+import dmirzayants.voidvpn.feature.home.presentation.HomeScreen
 import dmirzayants.voidvpn.feature.onboarding.presentation.OnboardingScreen
+import dmirzayants.voidvpn.feature.servers.presentation.ServersScreen
+import dmirzayants.voidvpn.feature.settings.presentation.ProtocolScreen
+import dmirzayants.voidvpn.feature.settings.presentation.SettingsScreen
 import dmirzayants.voidvpn.feature.permission.presentation.PermissionScreen
 import dmirzayants.voidvpn.ui.theme.VoidBlack
 import dmirzayants.voidvpn.ui.theme.VoidText
@@ -76,7 +87,67 @@ fun VoidNavHost(
             )
         }
         composable<HomeRoute> {
-            PlaceHolderScreen("Home")
+            HomeScreen(
+                onTabSelected = navController::navigateToTab,
+                onNavigateToServers = { navController.navigateToTab(MainTab.Servers) },
+                onNavigateToPlan = { navController.navigateToTab(MainTab.Plan) },
+                onNavigateToProtocol = { navController.navigate(ProtocolRoute) }
+            )
+        }
+        composable<ServersRoute> {
+            ServersScreen(
+                onTabSelected = navController::navigateToTab,
+                onNavigateToHome = { navController.navigateToTab(MainTab.Home) }
+            )
+        }
+        composable<PlanRoute> {
+            MyPlanScreen(
+                onTabSelected = navController::navigateToTab,
+                onNavigateToPlans = { navController.navigate(PlansRoute) }
+            )
+        }
+        composable<PlansRoute> {
+            PlansScreen(
+                onClose = { navController.popBackStack() },
+                onContinue = { planId -> navController.navigate(PaymentMethodsRoute(planId)) }
+            )
+        }
+        composable<PaymentMethodsRoute> { entry ->
+            val route = entry.toRoute<PaymentMethodsRoute>()
+            PaymentMethodsScreen(
+                planId = route.planId,
+                onBack = { navController.popBackStack() },
+                onPay = { methodId ->
+                    navController.navigate(PaymentStatusRoute(route.planId, methodId))
+                }
+            )
+        }
+        composable<PaymentStatusRoute> {
+            PaymentStatusScreen(
+                onConfirmed = {
+                    navController.navigate(PlanRoute) {
+                        popUpTo(HomeRoute)
+                        launchSingleTop = true
+                    }
+                }
+            )
+        }
+        composable<SettingsRoute> {
+            SettingsScreen(
+                onTabSelected = navController::navigateToTab,
+                onNavigateToProtocol = { navController.navigate(ProtocolRoute) },
+                onNavigateToSplitTunneling = { navController.navigate(SplitTunnelingRoute) },
+                onNavigateToLogs = { navController.navigate(LogsRoute) }
+            )
+        }
+        composable<ProtocolRoute> {
+            ProtocolScreen(onNavigateBack = { navController.popBackStack() })
+        }
+        composable<SplitTunnelingRoute> {
+            PlaceHolderScreen("SplitTunneling")
+        }
+        composable<LogsRoute> {
+            PlaceHolderScreen("Logs")
         }
     }
 }
@@ -90,5 +161,20 @@ private fun PlaceHolderScreen(name: String) {
         contentAlignment = Alignment.Center,
     ) {
         Text(name, color = VoidText.primary, style = MaterialTheme.typography.headlineLarge)
+    }
+}
+
+/** Переключение вкладок нижней панели: одна запись на вкладку, Home всегда внизу стека. */
+fun NavController.navigateToTab(tab: MainTab) {
+    val route: Any = when (tab) {
+        MainTab.Home -> HomeRoute
+        MainTab.Servers -> ServersRoute
+        MainTab.Plan -> PlanRoute
+        MainTab.Settings -> SettingsRoute
+    }
+    navigate(route) {
+        popUpTo(HomeRoute) { saveState = true }
+        launchSingleTop = true
+        restoreState = true
     }
 }

@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dmirzayants.voidvpn.feature.onboarding.domain.ObserveOnboardingCompletedUseCase
+import dmirzayants.voidvpn.feature.account.domain.AccountRepository
 import dmirzayants.voidvpn.navigation.HomeRoute
+import dmirzayants.voidvpn.navigation.StartRoute
 import dmirzayants.voidvpn.navigation.OnboardingRoute
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -15,7 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    observeOnboardingCompleted: ObserveOnboardingCompletedUseCase
+    observeOnboardingCompleted: ObserveOnboardingCompletedUseCase,
+    private val accountRepository: AccountRepository
 ) : ViewModel() {
 
     private val _startDestination = MutableStateFlow<Any?>(null)
@@ -24,7 +27,12 @@ class MainViewModel @Inject constructor(
     init {
         viewModelScope.launch {
             val completed = observeOnboardingCompleted().first()
-            _startDestination.value = if (completed) HomeRoute else OnboardingRoute
+            val hasAccount = accountRepository.accessKey.first() != null
+            _startDestination.value = when {
+                !completed -> OnboardingRoute
+                !hasAccount -> StartRoute
+                else -> HomeRoute
+            }
         }
     }
 }

@@ -47,4 +47,108 @@
     <string name="login_submit">Войти</string>
     <string name="login_back">Назад</string>
     <string name="start_terms">Продолжая, вы принимаете Условия и Политику конфиденциальности</string>
+
+    <string name="tab_home">Главная</string>
+    <string name="tab_servers">Серверы</string>
+    <string name="tab_plan">Тариф</string>
+    <string name="tab_settings">Настройки</string>
+
+    <string name="home_off_title">Не подключено</string>
+    <string name="home_off_sub">Нажмите, чтобы защитить соединение</string>
+    <string name="home_off_chip">Защита выключена</string>
+    <string name="home_connecting_title">Подключение…</string>
+    <string name="home_connecting_sub">Пробуем %1$s</string>
+    <string name="home_connecting_chip">Устанавливаем туннель</string>
+    <string name="home_on_title">Подключено</string>
+    <string name="home_on_sub">IP %1$s</string>
+    <string name="home_on_chip">Защищено</string>
+    <string name="home_error_title">Не удалось подключиться</string>
+    <string name="home_error_timeout">Сервер не ответил за 10 секунд</string>
+    <string name="home_error_blocked">Соединение блокируется провайдером</string>
+    <string name="home_error_unknown">Что-то пошло не так</string>
+    <string name="home_error_chip">Нет защиты</string>
+    <string name="home_stat_time">Время</string>
+    <string name="home_stat_down">↓ Загрузка</string>
+    <string name="home_stat_up">↑ Отдача</string>
+    <string name="home_unit_mbps">Мбит/с</string>
+    <string name="home_hint_text">Провайдер может блокировать этот протокол. Попробуйте другой.</string>
+    <string name="home_hint_change">Сменить протокол</string>
+    <string name="home_hint_report">Отчёт</string>
+    <string name="home_banner_text">Подписка закончится через 3 дня</string>
+    <string name="home_banner_renew">Продлить</string>
+    <string name="home_no_server">Сервер не выбран</string>
+    <string name="home_auto_server">Авто</string>
+
+    <string name="servers_title">Серверы</string>
+    <string name="servers_ping">↻ Пинг</string>
+    <string name="servers_search">Страна или город</string>
+    <string name="servers_filter_all">Все · %1$d</string>
+    <string name="servers_filter_favorites">★ Избранное · %1$d</string>
+    <string name="servers_auto">Авто</string>
+    <string name="servers_auto_hint">Лучший по пингу сейчас: %1$s</string>
+    <string name="servers_ping_measuring">пинг…</string>
+    <string name="servers_ping_value">%1$d ms</string>
+
+    <string name="settings_title">Настройки</string>
+    <string name="settings_group_connection">Подключение</string>
+    <string name="settings_group_network">Сеть</string>
+    <string name="settings_group_app">Приложение</string>
+    <string name="settings_group_help">Помощь</string>
+    <string name="settings_protocol">Протокол</string>
+    <string name="settings_split">Раздельное туннелирование</string>
+    <string name="settings_split_value">3 прил.</string>
+    <string name="settings_killswitch">Kill switch</string>
+    <string name="settings_killswitch_sub">Блокировать интернет при обрыве VPN</string>
+    <string name="settings_autoconnect">Автоподключение</string>
+    <string name="settings_autoconnect_sub">В незнакомых сетях Wi‑Fi</string>
+    <string name="settings_boot">Запуск вместе с Android</string>
+    <string name="settings_dns">DNS</string>
+    <string name="settings_dns_value">Cloudflare DoH</string>
+    <string name="settings_language">Язык</string>
+    <string name="settings_language_value">Русский</string>
+    <string name="settings_theme">Тема</string>
+    <string name="settings_theme_value">Системная</string>
+    <string name="settings_support">Поддержка</string>
+    <string name="settings_logs">Журнал подключения</string>
+
+    <string name="protocol_title">Протокол</string>
+    <string name="protocol_auto_desc">Сами подберём протокол, который работает в вашей сети</string>
+    <string name="protocol_auto_tag">Рекомендуем</string>
+    <string name="protocol_vless_desc">Маскируется под обычный HTTPS. Лучше всего проходит DPI</string>
+    <string name="protocol_vless_tag">Обход блокировок</string>
+    <string name="protocol_hysteria_desc">Самый быстрый, работает по UDP. Иногда блокируется</string>
+    <string name="protocol_trojan_desc">Надёжный запасной вариант</string>
+    <string name="protocol_ss_desc">Лёгкий, для медленных сетей</string>
+
+    <string name="plan_my_title">Мой тариф</string>
+    <string name="plan_active">● Активна</string>
+    <string name="plan_left_days">Осталось %1$d дн.</string>
+    <string name="plan_traffic">Трафик</string>
+    <string name="plan_devices">Устройства</string>
+    <string name="plan_devices_value">%1$d из %2$d</string>
+    <string name="plan_key_label">Ключ аккаунта</string>
+    <string name="plan_key_show">Показать</string>
+    <string name="plan_key_hide">Скрыть</string>
+    <string name="plan_renew">Продлить</string>
+    <string name="plan_change">Сменить тариф</string>
+
+    <string name="plans_title">Void Pro</string>
+    <string name="plans_restore">Восстановить</string>
+    <string name="plans_feature_1">До 5 устройств</string>
+    <string name="plans_feature_2">Без лимита трафика</string>
+    <string name="plans_feature_3">Все страны и протоколы</string>
+    <string name="plans_pay">Перейти к оплате · %1$s</string>
+    <string name="plans_note">Без автопродления. Отмена не нужна.</string>
+
+    <string name="pay_title">Способ оплаты</string>
+    <string name="pay_note">Оплата проходит вне Google Play</string>
+
+    <string name="status_title">Ждём оплату</string>
+    <string name="status_text">Обычно это занимает до 3 минут.\nКриптоплатёж — до 30 минут.</string>
+    <string name="status_step_1">Счёт создан</string>
+    <string name="status_step_2">Ждём подтверждение банка</string>
+    <string name="status_step_3">Подписка активирована</string>
+    <string name="status_reopen">Открыть оплату снова</string>
+    <string name="status_support">Написать в поддержку</string>
+    <string name="status_done">Оплата прошла</string>
 </resources>
