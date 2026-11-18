@@ -31,6 +31,17 @@ class AccountRepositoryImpl @Inject constructor(
         return key
     }
 
+    override suspend fun login(key: String): Boolean {
+        if (!isValidKey(key)) return false
+        dataStore.edit { it[KEY] = key }
+        return  true
+    }
+
+    private fun isValidKey(key: String): Boolean =
+        key.length == KEY_PREFIX.length + KEY_RANDOM_LENGTH &&
+                key.startsWith(KEY_PREFIX) &&
+                key.drop(KEY_PREFIX.length).all { it in ALPHABET }
+
     private fun generateKey(): String {
         val random = SecureRandom()
         val suffix = (1..KEY_RANDOM_LENGTH)

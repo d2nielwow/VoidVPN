@@ -37,5 +37,14 @@
     <string name="key_warning">Сохраните ключ в надёжном месте. Восстановить его без email невозможно.</string>
     <string name="key_saved">Я сохранил ключ</string>
     <string name="key_copied">Ключ скопирован</string>
+    <string name="login_title">Вход по ключу</string>
+    <string name="login_text">Введите ключ из 16 символов или вставьте ссылку на подписку.</string>
+    <string name="login_paste">Вставить</string>
+    <string name="login_format">Формат: VOID-XXXX-XXXX-XXXX</string>
+    <string name="login_error">Ключ не подошёл. Проверьте символы и попробуйте снова.</string>
+    <string name="login_import_title">Импорт подписки</string>
+    <string name="login_import_text">QR-код или ссылка vless://, https://…/sub</string>
+    <string name="login_submit">Войти</string>
+    <string name="login_back">Назад</string>
     <string name="start_terms">Продолжая, вы принимаете Условия и Политику конфиденциальности</string>
 </resources>
