@@ -8,6 +8,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -119,6 +120,7 @@ fun KeyCreatedContent(
                         .weight(1f)
                         .height(44.dp),
                     shape = RoundedCornerShape(14.dp),
+                    contentPadding = PaddingValues(horizontal = 8.dp),
                     colors = ButtonDefaults.buttonColors(
                         contentColor = VoidText.onLight,
                         containerColor = VoidAction
@@ -126,7 +128,8 @@ fun KeyCreatedContent(
                 ) {
                     Text(
                         stringResource(R.string.key_copy),
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        maxLines = 1
                     )
                 }
                 Button(
@@ -135,6 +138,7 @@ fun KeyCreatedContent(
                         .weight(1f)
                         .height(44.dp),
                     shape = RoundedCornerShape(14.dp),
+                    contentPadding = PaddingValues(horizontal = 8.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = VoidSurface.cardAlt,
                         contentColor = VoidText.primary
@@ -142,7 +146,8 @@ fun KeyCreatedContent(
                 ) {
                     Text(
                         stringResource(R.string.key_save_qr),
-                        style = MaterialTheme.typography.bodyMedium
+                        style = MaterialTheme.typography.bodyMedium,
+                        maxLines = 1
                     )
                 }
             }
