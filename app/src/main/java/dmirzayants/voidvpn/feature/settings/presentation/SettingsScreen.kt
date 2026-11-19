@@ -154,7 +154,6 @@ private fun Group(titleRes: Int, content: @Composable () -> Unit) {
     }
 }
 
-/** Строка настроек: либо значение со стрелкой, либо переключатель. */
 @Composable
 private fun SettingRow(
     label: String,

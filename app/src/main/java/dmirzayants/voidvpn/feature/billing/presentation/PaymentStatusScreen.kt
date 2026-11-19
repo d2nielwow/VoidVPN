@@ -57,7 +57,6 @@ import javax.inject.Inject
 
 data class PaymentStatusState(
     val secondsLeft: Int = 180,
-    /** 0: счёт создан, 1: ждём банк, 2: подписка активна. */
     val step: Int = 1,
     val invoice: String = "#A-48213",
     val summary: String = "",
@@ -74,10 +73,6 @@ sealed interface PaymentStatusEffect : UiEffect {
     data object PaymentConfirmed : PaymentStatusEffect
 }
 
-/**
- * Пока нет сервера оплаты, подтверждение имитируется через несколько секунд.
- * Реальный вариант: опрос статуса счёта на бэкенде.
- */
 @HiltViewModel
 class PaymentStatusViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
@@ -103,7 +98,6 @@ class PaymentStatusViewModel @Inject constructor(
     }
 
     override fun onIntent(intent: PaymentStatusIntent) {
-        // Открытие платёжной страницы и поддержка появятся вместе с бэкендом.
     }
 }
 

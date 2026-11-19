@@ -38,7 +38,6 @@ import dmirzayants.voidvpn.ui.theme.VoidSurface
 import dmirzayants.voidvpn.ui.theme.VoidText
 import dmirzayants.voidvpn.ui.theme.VoidTextSoft
 
-/** 5.2 Способ оплаты. */
 @Composable
 fun PaymentMethodsScreen(
     planId: String,

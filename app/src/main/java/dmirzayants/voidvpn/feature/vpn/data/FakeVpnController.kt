@@ -17,7 +17,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.random.Random
 
-/** Имитация туннеля для разработки интерфейса. Заменяется реализацией на sing-box. */
 @Singleton
 class FakeVpnController @Inject constructor() : VpnController {
 

@@ -13,9 +13,7 @@ data class Server(
     val countryCode: String,
     val country: String,
     val city: String,
-    /** null: пинг ещё измеряется (или сервер недоступен, см. [available]). */
     val pingMs: Int?,
-    /** Нагрузка 0..100. */
     val load: Int,
     val available: Boolean = true,
     val favorite: Boolean = false,

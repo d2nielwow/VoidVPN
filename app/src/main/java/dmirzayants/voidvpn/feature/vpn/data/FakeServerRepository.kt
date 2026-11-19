@@ -11,7 +11,6 @@ import javax.inject.Inject
 import javax.inject.Singleton
 import kotlin.random.Random
 
-/** Список серверов для разработки. Заменяется загрузкой из подписки. */
 @Singleton
 class FakeServerRepository @Inject constructor() : ServerRepository {
 

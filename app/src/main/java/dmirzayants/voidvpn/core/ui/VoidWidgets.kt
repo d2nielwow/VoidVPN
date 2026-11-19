@@ -31,7 +31,6 @@ import dmirzayants.voidvpn.ui.theme.VoidOutline
 import dmirzayants.voidvpn.ui.theme.VoidSurface
 import dmirzayants.voidvpn.ui.theme.VoidText
 
-/** Круглая кнопка «назад» 44dp (стрелка зеркалится в RTL). */
 @Composable
 fun VoidBackButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
     Box(
@@ -49,7 +48,6 @@ fun VoidBackButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
     }
 }
 
-/** Основная светлая кнопка 56dp. */
 @Composable
 fun VoidPrimaryButton(
     text: String,
@@ -76,7 +74,6 @@ fun VoidPrimaryButton(
     }
 }
 
-/** Вторичная кнопка: тёмный фон. */
 @Composable
 fun VoidSecondaryButton(
     text: String,
@@ -99,7 +96,6 @@ fun VoidSecondaryButton(
     }
 }
 
-/** Радио-точка: выбранная рисуется толстым кольцом. */
 @Composable
 fun VoidRadio(selected: Boolean, modifier: Modifier = Modifier) {
     Box(
@@ -113,7 +109,6 @@ fun VoidRadio(selected: Boolean, modifier: Modifier = Modifier) {
     )
 }
 
-/** Переключатель 44×26 из макета. */
 @Composable
 fun VoidSwitch(checked: Boolean, onCheckedChange: (Boolean) -> Unit, modifier: Modifier = Modifier) {
     val offset by animateDpAsState(if (checked) 21.dp else 3.dp, label = "thumb")
@@ -136,7 +131,6 @@ fun VoidSwitch(checked: Boolean, onCheckedChange: (Boolean) -> Unit, modifier: M
 
 private val Color232327 = androidx.compose.ui.graphics.Color(0xFF232327)
 
-/** Карточка-контейнер: тёмный фон, тонкая обводка. */
 fun Modifier.voidCard(radius: androidx.compose.ui.unit.Dp = 20.dp, selected: Boolean = false): Modifier =
     this
         .background(VoidSurface.base, RoundedCornerShape(radius))

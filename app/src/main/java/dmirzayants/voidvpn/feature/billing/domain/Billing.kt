@@ -32,7 +32,6 @@ data class Subscription(
     val active: Boolean,
 )
 
-/** Каталог тарифов и способов оплаты. Позже приходит с сервера. */
 object BillingCatalog {
     val plans = listOf(
         PlanOption("year", "Год", "249 ₽ в месяц", 2990, badge = "−50%"),
@@ -54,6 +53,5 @@ object BillingCatalog {
 interface BillingRepository {
     val subscription: Flow<Subscription>
 
-    /** Вызывается после подтверждения оплаты. */
     suspend fun activate(planId: String)
 }

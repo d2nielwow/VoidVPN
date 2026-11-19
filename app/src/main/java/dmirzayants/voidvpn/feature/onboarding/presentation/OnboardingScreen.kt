@@ -63,11 +63,9 @@ fun OnboardingContent(
     val pagerState = rememberPagerState(initialPage = state.page) { onboardingSlides.size }
     val isLast = state.page == onboardingSlides.lastIndex
 
-    // ViewModel → Pager: нажали «Далее», пейджер доезжает до нужной страницы
     LaunchedEffect(state.page) {
         pagerState.animateScrollToPage(state.page)
     }
-    // Pager → ViewModel: пролистали пальцем, сообщаем состоянию
     LaunchedEffect(pagerState) {
         snapshotFlow { pagerState.settledPage }
             .collect { onIntent(OnboardingIntent.PageChanged(it)) }

@@ -206,7 +206,6 @@ private fun KeyPart(text: String, modifier: Modifier = Modifier) {
     }
 }
 
-
 @Preview(showBackground = true, backgroundColor = 0xFF000000)
 @Composable
 private fun KeyCreatedScreenPreview() {

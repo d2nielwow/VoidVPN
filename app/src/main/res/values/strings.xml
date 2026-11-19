@@ -77,7 +77,6 @@
     <string name="home_banner_text">Подписка закончится через 3 дня</string>
     <string name="home_banner_renew">Продлить</string>
     <string name="home_no_server">Сервер не выбран</string>
-    <string name="home_auto_server">Авто</string>
 
     <string name="servers_title">Серверы</string>
     <string name="servers_ping">↻ Пинг</string>

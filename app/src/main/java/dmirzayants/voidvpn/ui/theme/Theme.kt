@@ -4,8 +4,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.Composable
 
-// Void — только тёмная тема на чистом чёрном (OLED). Dynamic color отключён намеренно:
-// бренд монохромный, цвет означает только состояние.
 private val VoidColorScheme = darkColorScheme(
     primary = VoidAction,
     onPrimary = VoidText.onLight,

@@ -17,7 +17,6 @@ data class ImportState(
     val clipboard: String = "",
     val error: Boolean = false,
 ) : UiState {
-    /** Ссылка из поля ввода приоритетнее ссылки из буфера. */
     val detected: ParsedLink? get() = LinkParser.parse(input) ?: LinkParser.parse(clipboard)
     val clipboardDetected: Boolean get() = input.isBlank() && LinkParser.parse(clipboard) != null
 }
@@ -45,7 +44,7 @@ class ImportViewModel @Inject constructor(
             is ImportIntent.InputChanged -> setState { copy(input = intent.value, error = false) }
             is ImportIntent.ClipboardRead -> setState { copy(clipboard = intent.text) }
             ImportIntent.ImportClicked -> onImport()
-            ImportIntent.ScanClicked -> Unit // сканер QR подключается отдельно (камера, ZXing)
+            ImportIntent.ScanClicked -> Unit
             ImportIntent.BackClicked -> sendEffect(ImportEffect.NavigateBack)
         }
     }

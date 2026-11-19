@@ -13,7 +13,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 abstract class VpnModule {
 
-    /** Когда появится sing-box, здесь меняется только реализация. */
     @Binds
     @Singleton
     abstract fun bindVpnController(impl: FakeVpnController): VpnController

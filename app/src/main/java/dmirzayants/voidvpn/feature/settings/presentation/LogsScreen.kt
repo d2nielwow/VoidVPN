@@ -26,7 +26,6 @@ import dmirzayants.voidvpn.ui.theme.VoidText
 
 private data class LogLine(val time: String, val level: String, val color: Color, val message: String)
 
-/** Пример строк журнала. Источник появится вместе с sing-box (его логи пишутся в файл). */
 private val sampleLogs = listOf(
     LogLine("12:04:11", "INFO", VoidText.tertiary, "sing-box started"),
     LogLine("12:04:11", "INFO", VoidText.tertiary, "outbound hysteria2 nl-ams-03"),

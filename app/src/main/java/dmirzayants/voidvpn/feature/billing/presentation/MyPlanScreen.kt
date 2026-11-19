@@ -136,7 +136,6 @@ fun MyPlanContent(
             color = VoidText.primary
         )
         if (sub != null) {
-            // Светлая карточка тарифа
             Column(
                 modifier = Modifier
                     .padding(start = 20.dp, end = 20.dp, top = 16.dp)

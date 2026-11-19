@@ -15,7 +15,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import dmirzayants.voidvpn.ui.theme.VoidSurface
 
-/** Круглый флаг страны (drawable flag_<код>) на тёмной подложке. */
 @Composable
 fun VoidFlag(countryCode: String, size: Dp, modifier: Modifier = Modifier) {
     val context = LocalContext.current

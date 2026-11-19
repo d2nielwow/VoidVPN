@@ -62,7 +62,6 @@ private fun mono(size: Int, lh: Int, w: FontWeight, ls: Double = 0.0) = TextStyl
     letterSpacing = ls.em,
 )
 
-/** Технические значения: ключи, таймер, пинг, IP, журнал. */
 object VoidMono {
     val key = mono(20, 24, FontWeight.SemiBold, 0.1)
     val value = mono(15, 20, FontWeight.SemiBold)

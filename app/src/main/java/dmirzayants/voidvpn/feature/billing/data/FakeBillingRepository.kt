@@ -12,7 +12,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/** Подписка-заглушка до появления бэкенда. */
 @Singleton
 class FakeBillingRepository @Inject constructor() : BillingRepository {
 

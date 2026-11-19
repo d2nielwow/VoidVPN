@@ -3,10 +3,8 @@ package dmirzayants.voidvpn.feature.account.domain
 import dmirzayants.voidvpn.feature.vpn.domain.VpnProtocol
 import java.net.URI
 
-/** Результат разбора ссылки из буфера или поля ввода. */
 data class ParsedLink(
     val raw: String,
-    /** null для ссылки-подписки https://…/sub: протоколы приходят внутри неё. */
     val protocol: VpnProtocol?,
     val host: String?,
     val isSubscription: Boolean,
@@ -22,7 +20,6 @@ object LinkParser {
         "ss" to VpnProtocol.SHADOWSOCKS,
     )
 
-    /** Поддерживаются vless://, hy2://, trojan://, ss://, а также https://…/sub. Остальное даёт null. */
     fun parse(text: String): ParsedLink? {
         val raw = text.trim()
         if (raw.isEmpty() || raw.any { it.isWhitespace() }) return null
